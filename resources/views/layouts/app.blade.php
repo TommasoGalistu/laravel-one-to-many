@@ -24,10 +24,8 @@
         <@include('admin.partial.header')
         <div class="content">
             @auth
-            <aside class="sidebar d-flex flex-column">
-               <a href="{{ route('admin.posts.index') }}">All Project</a>
-               <a href="{{ route('admin.posts.create') }}">Create Project</a>
-            </aside>
+
+            @include('admin.partial.aside')
 
             @endauth
             <main class="main">

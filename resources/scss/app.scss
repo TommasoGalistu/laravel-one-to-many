@@ -30,3 +30,13 @@ header {
     background-color: white;
     overflow: auto;
 }
+.category {
+    border: none;
+    margin: 1rem;
+}
+ul {
+    li {
+        margin: 0.2rem;
+    }
+    // list-style-type: none;
+}

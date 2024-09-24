@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Guest\PageController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\CategoryController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,7 +26,11 @@ Route::middleware(['auth', 'verified'])
     ->name('admin.')
     ->group(function (){
         Route::get('/', [AdminController::class, 'index'])->name('home');
+        Route::get('/categories/all', [CategoryController::class, 'showAllCategories'])->name('showAllCategories');
+
+
         Route::resource('/posts', PostController::class);
+        Route::resource('/categories', CategoryController::class);
     });
 
 
