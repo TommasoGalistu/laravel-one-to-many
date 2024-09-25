@@ -21,6 +21,15 @@
         <small class="invalid-feedback">{{$message}}</small>
       @enderror
     </div>
+    <select class="form-select" aria-label="Default select example">
+        <option value="" selected>Open this select menu</option>
+        @foreach ($posts as $post)
+        <option value="{{ $post->id }}">{{ $post->name }}</option>
+
+        @endforeach
+
+      </select>
+
     <div class="mb-3 d-flex flex-column">
       <label for="description" class="form-label">Descrizione</label>
       <textarea name="description" id="description" cols="30" rows="10"></textarea>

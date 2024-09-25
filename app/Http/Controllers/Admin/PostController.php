@@ -6,7 +6,9 @@ use App\Function\Helper;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Category;
 use App\Http\Requests\PostRequest;
+
 class PostController extends Controller
 {
     /**
@@ -23,7 +25,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('admin.posts.create');
+        $posts = Category::all();
+        return view('admin.posts.create', compact('posts'));
     }
 
     /**

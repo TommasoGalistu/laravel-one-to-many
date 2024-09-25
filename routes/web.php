@@ -29,8 +29,8 @@ Route::middleware(['auth', 'verified'])
         Route::get('/categories/all', [CategoryController::class, 'showAllCategories'])->name('showAllCategories');
 
 
-        Route::resource('/posts', PostController::class);
-        Route::resource('/categories', CategoryController::class);
+        Route::resource('posts', PostController::class);
+        Route::resource('categories', CategoryController::class);
     });
 
 
